@@ -58,6 +58,8 @@ tensorflow 1.15
 
     stage2: lr:2e-5 train_batshc_size:64 epoch:3 eval_accuracy:0.82424  业务数据：0.7595
 
+    模型：百度网盘(链接: https://pan.baidu.com/s/1ILpUpDHLSfDha4rVMnmCxQ 提取码: m9ww)
+
 3. 其它 
 
     python run_classifier.py --do_train --do_eval --stage_1_outputdir out_1_3 --stage_2_outputdir out_2_3 --suc_layers 2
@@ -75,5 +77,5 @@ tensorflow 1.15
 2. left sentence 长度：60, right sentence 长度：60, batch_size:1
 
     bert 耗时:   0.18 
-    
+
     suc_layers_2: 0.047
