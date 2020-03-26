@@ -3,7 +3,9 @@
 # 环境
 
 ubuntu 16.04
+
 python 3.6
+
 tensorflow 1.15
 
 # bert_of_theseus代码修改细节
@@ -33,10 +35,12 @@ tensorflow 1.15
     ```
     
     stage1: lr:2e-5 train_batch_size:64 epoch:10 eval_accuracy:0.8612
+
     stage2: lr:2e-5 train_batshc_size:64 epoch:4 eval_accuracy:0.86 并没有提升 业务数据：0.53435 过拟合了？
 
 
     stage1: lr:2e-5 train_batch_size:64 num_train_epochs:4 eval_accuracy:0.83
+
     stage1: lr:2e-5 train_batch_size:64 num_train_epochs:3 eval_accuracy:0.85536
 
 2.  压缩到两层
@@ -47,11 +51,15 @@ tensorflow 1.15
     ```
     
     stage1: lr:2e-5 train_batch_size:64 epoch:10 eval_accuracy:0.78584
+
     stage2: lr:2e-5 train_batshc_size:64 epoch:2 eval_accuracy:0.82528
+
     stage2: lr:2e-5 train_batshc_size:64 epoch:1 eval_accuracy:0.81032  
+
     stage2: lr:2e-5 train_batshc_size:64 epoch:3 eval_accuracy:0.82424  业务数据：0.7595
 
 3. 其它 
+
     python run_classifier.py --do_train --do_eval --stage_1_outputdir out_1_3 --stage_2_outputdir out_2_3 --suc_layers 2
 
     stage1: lr:2e-5 train_batch_size:64 epoch:4 eval_accuracy:0.76512
@@ -59,9 +67,13 @@ tensorflow 1.15
 # inference速度
 
 1. left sentence 长度：60, right sentence 长度：60, batch_size:10
+
     bert 耗时: 1.2s
+
     suc_layers_2： 0.57s
 
 2. left sentence 长度：60, right sentence 长度：60, batch_size:1
+
     bert 耗时:   0.18 
+    
     suc_layers_2: 0.047
